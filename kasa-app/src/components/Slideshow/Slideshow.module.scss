@@ -1,0 +1,56 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_variables.scss";
+
+.carousel {
+    position: relative;
+    margin: 0 100px;
+
+    @media (max-width: $breakpoint-small) {
+        margin: 0 20px;
+    }
+
+    &__slide {
+        object-fit: cover;
+        @include block-format(100%, 415px, 25px);
+
+        @media (max-width: $breakpoint-small) {
+            @include block-format(100%, 255px, 10px);
+        }
+    }
+
+    &__controls {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr;
+        position: absolute;
+        inset: 25px;
+
+        @media (max-width: $breakpoint-small) {
+            inset: 6px;
+        }
+    }
+
+    &__button {
+        align-self: center;
+        @include chevron-button;
+
+        &--left {
+            justify-self: start;
+        }
+
+        &--right {
+            justify-self: end;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__number {
+        grid-column: span 2;
+        text-align: center;
+        @include text-format($color-secondary, 18, 500);
+
+        @media (max-width: $breakpoint-small) {
+            display: none;
+        }
+    }
+}

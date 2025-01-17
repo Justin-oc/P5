@@ -1,0 +1,63 @@
+@mixin block-format($width, $height, $radius) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+}
+
+@mixin chevron-button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+@mixin collapse-animation($rows, $padding, $opacity, $translate) {
+    display: grid;
+    grid-template-rows: $rows;
+    padding: $padding;
+    opacity: $opacity;
+    transform: translateY($translate);
+    transition: all 0.3s ease, opacity 0.5s ease-out;
+}
+
+@mixin column-flexbox($gap) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin column-grid($columns, $gap, $margin) {
+    display: grid;
+    grid-template-columns: $columns;
+    gap: $gap;
+    margin: $margin;
+}
+
+@mixin list-format {
+    list-style: none;
+    padding: 0;
+}
+
+@mixin overlapping-element($column, $row, $width) {
+    grid-column: $column;
+    grid-row: $row;
+    width: $width;
+}
+
+@mixin radius-shadow($radius, $filter) {
+    border-radius: $radius;
+    filter: $filter;
+}
+
+@mixin tag-format($width, $radius, $padding) {
+    min-width: $width;
+    border-radius: $radius;
+    padding: $padding;
+}
+
+@mixin text-format($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}

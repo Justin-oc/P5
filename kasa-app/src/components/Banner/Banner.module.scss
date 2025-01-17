@@ -1,0 +1,46 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_variables.scss";
+
+.bannerblock {
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../../assets/home-illustration.webp") no-repeat center;
+    margin: 0 100px;
+    @include radius-shadow(25px, drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25)));
+
+    @media (max-width: $breakpoint-small) {
+        text-align: left;
+        background-size: 190%;
+        margin: 0 20px;
+        @include radius-shadow(10px, none);
+    }
+
+    &--alt {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            url("../../assets/about-illustration.webp") no-repeat center;
+        @include radius-shadow(25px, none);
+
+        @media (max-width: $breakpoint-small) {
+            background-size: 115%;
+            @include radius-shadow(10px, none);
+        }
+    }
+
+    &__title {
+        text-shadow: 0 -1px $color-tertiary, 1px 0 $color-tertiary,
+            0 1px $color-tertiary, -1px 0 $color-tertiary,
+            0 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 80px 0;
+        @include text-format($color-secondary, 48px, 700);
+
+        @media (max-width: $breakpoint-small) {
+            text-shadow: none;
+            padding: 30px 95px 30px 15px;
+            @include text-format($color-secondary, 24px, 700);
+        }
+
+        &--hidden {
+            visibility: hidden;
+        }
+    }
+}

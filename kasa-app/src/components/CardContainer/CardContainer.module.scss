@@ -1,0 +1,20 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_variables.scss";
+
+.cardsection {
+    background-color: $color-cardblock;
+    border-radius: 25px;
+    padding: 50px;
+    @include column-grid(repeat(3, 1fr), 50px 60px, 50px 100px);
+
+    @media (max-width: $breakpoint-medium) {
+        @include column-grid(repeat(2, 1fr), 50px 60px, 50px 100px);
+    }
+
+    @media (max-width: $breakpoint-small) {
+        background-color: transparent;
+        border-radius: 10px;
+        padding: 0;
+        @include column-grid(1fr, 20px 0, 25px 20px);
+    }
+}
